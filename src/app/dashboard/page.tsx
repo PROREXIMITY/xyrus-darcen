@@ -1,5 +1,4 @@
 import React from 'react'
-import Home from '@/app/components/Home'
 import Navigation from '@/app/components/Navigation'
 import Hero from '@/app/components/Hero'
 import About from '@/app/components/About'
