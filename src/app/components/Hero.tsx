@@ -3,7 +3,7 @@ export function Hero() {
     <section id="home" className="section home-section">
       <div className="flex justify-start items-center px-5 mx-[30px] mt-[50px]">
         <div className="flex-1 ml-[100px]">
-          <h1 className="m-0 text-[2.5em] text-[#f4f4f4]">Hi I'm XYRUS DARCEN</h1>
+          <h1 className="m-0 text-[2.5em] text-[#f4f4f4]">Hi I&apos;m XYRUS DARCEN</h1>
           <p className="text-[1.2em] text-[#bebebe]">A FULLSTACK DEVELOPER</p>
           <a
             href="#projects"

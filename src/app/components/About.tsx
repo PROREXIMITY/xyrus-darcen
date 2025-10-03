@@ -52,7 +52,7 @@ export default function About() {
               <p className="text-[25px] leading-[1.6]">
                 In addition to my interest for web development, I also enjoy
                 video editing. I find it fascinating to create visually engaging
-                content that tells a story and captures the audience's
+                content that tells a story and captures the audience&apos;s
                 attention.
               </p>
             </div>
