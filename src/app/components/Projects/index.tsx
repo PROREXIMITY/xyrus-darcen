@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Advance Web",
-    image: "/advanced-web-project.jpg",
+    image: "/assets/AdvWeb.png",
   },
 ];
 
