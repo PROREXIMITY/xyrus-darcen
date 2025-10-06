@@ -5,7 +5,7 @@ import About from '@/app/components/About'
 import Projects from '@/app/components/Projects'
 
 
-function Dashboard() {
+function HomePage() {
   return (
     <main className='min-h-screen'>
       <Navigation />
@@ -16,4 +16,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default HomePage
