@@ -21,25 +21,25 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[rgb(11,11,15)] py-[50px] flex h-screen"
+      className="bg-[rgb(11,11,15)] py-[50px] flex min-h-screen"
     >
       <div className="max-w-[1200px] mx-auto px-5 flex flex-col items-center w-full">
         <h2 className="text-center mb-10">
-          <span className="text-[40px] block mb-[10px] text-white">
-            PROJECTS
+          <span className="text-[30px] md:text-[40px] block mb-[10px] text-white">
+            SELECTED PROJECTS
           </span>
           <hr className="gradient-hr mx-auto" />
-          <span className="text-[20px] font-light block mb-[70px] text-white">
+          <span className="text-[16px] md:text-[20px] font-light block mb-[40px] md:mb-[70px] text-white px-4">
             Here are the projects that I worked on, showcasing my skills for
             both personal and collaborative works.
           </span>
         </h2>
 
-        <div className="flex flex-row gap-[50px]">
+        <div className="flex flex-col md:flex-row gap-[50px]">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative w-[400px] h-[250px] transition-all duration-200 mt-[100px] noselect"
+              className="relative w-[300px] md:w-[400px] h-[200px] md:h-[250px] transition-all duration-200 mt-[50px] md:mt-[100px] noselect"
             >
               <div className="card-3d absolute inset-0 z-0 grid grid-cols-5 grid-rows-5 gap-0">
                 {Array.from({ length: 25 }, (_, i) => (
