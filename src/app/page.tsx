@@ -4,7 +4,6 @@ import About from '@/app/components/About'
 import Projects from '@/app/components/Projects'
 import Contact from '@/app/components/Contact'
 import Footer from '@/app/components/Footer'
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
 import { GradientBackground } from '@/app/ui/GradientBackground'
 
 export default function Home() {

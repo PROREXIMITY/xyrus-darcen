@@ -1,12 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Bruno_Ace_SC, Audiowide} from "next/font/google";
+import { Audiowide} from "next/font/google";
 
-const brunoAceSC = Bruno_Ace_SC({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
 
 const audiowide = Audiowide({
   subsets: ['latin'],
