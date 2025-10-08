@@ -1,17 +1,26 @@
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+
+
 export function Hero() {
   return (
-    <section id="home" className="section home-section">
-      <div className="flex flex-col-reverse md:flex-row justify-start items-center px-5 mx-4 md:mx-[30px] mt-[50px]">
-        <div className="flex-1 text-center md:text-left md:ml-[100px] mt-8 md:mt-0">
-          <h1 className="m-0 text-[2em] md:text-[2.5em] text-[#f4f4f4]">Hi I&apos;m XYRUS DARCEN</h1>
-          <p className="text-[1em] md:text-[1.2em] text-[#bebebe]">A FULL-STACK WEB DEVELOPER</p>
+    <section
+      id="home"
+      className="flex items-center justify-center min-h-screen"
+    >
+      <div className="flex flex-col items-center text-center max-w-3xl px-5">
+        <h1 className="tracking-widest text-4xl md:text-6xl font-bold text-[#f4f4f4] [text-shadow:_0_0_50px_rgba(255,255,255,0.4)] bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent">
+          XYRUS DARCEN
+        </h1>
+
+        <div className="[&_*]:text-[#bebebe] [&_*]:text-xl [&_*]:md:text-2xl [&_*]:tracking-widest ">
+          <TextGenerateEffect words="FULL-STACK WEB DEVELOPER" duration={2} />
         </div>
-        <div className="my-[30px] md:my-[50px] mx-auto md:mr-[100px] md:ml-0 flex-shrink-0 rounded-[20px] w-[280px] h-[280px] md:w-[450px] md:h-[450px] overflow-hidden">
-          {/* Image placeholder - content right section */}
-        </div>
+        {/* <p className="text-xl md:text-2xl text-[#bebebe] tracking-wider">
+          FULL-STACK WEB DEVELOPER
+        </p> */}
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

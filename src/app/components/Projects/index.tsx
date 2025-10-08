@@ -26,7 +26,7 @@ function Projects() {
       <div className="max-w-[1200px] mx-auto px-5 flex flex-col items-center w-full">
         <h2 className="text-center mb-10">
           <span className="text-[30px] md:text-[40px] block mb-[10px] text-white">
-            SELECTED PROJECTS
+            FEATURED PROJECTS
           </span>
           <hr className="gradient-hr mx-auto" />
           <span className="text-[16px] md:text-[20px] font-light block mb-[40px] md:mb-[70px] text-white px-4">
