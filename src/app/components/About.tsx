@@ -25,7 +25,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[rgba(11,11,15,0.95)] text-white mt-[150px] md:mt-[360px] py-[50px]"
+      className="bg-[rgba(11,11,15,0.95)] text-white mt-[20px] md:mt-[10px] py-[50px]"
     >
       <div className="max-w-[1200px] mx-auto px-5">
         <h2 className="text-center mb-10">
@@ -46,11 +46,11 @@ export default function About() {
             </h3>
             <div className="space-y-5">
               <p className="text-[18px] md:text-[25px] leading-[1.6]">
-                I am an{" "}
+                I am a{" "}
                 <strong className="font-bold text-[#fd6553]">
-                  Aspiring Frontend Web Developer
+                  Full-Stack Web Developer
                 </strong>{" "}
-                building and managing the Front-end of Websites and Web
+                building and managing the backend and frontend of Web
                 Applications that lead to the success of the overall project.
               </p>
               <p className="text-[18px] md:text-[25px] leading-[1.6]">
