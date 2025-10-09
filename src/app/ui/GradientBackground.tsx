@@ -106,14 +106,17 @@ export function GradientBackground() {
     text: ["X", "R", "D"][i % 3],
     initialX: Math.random() * 100,
     initialY: Math.random() * 100,
+    rotateX: Math.random() * 360,
+    rotateY: Math.random() * 360,
+    rotateZ: Math.random() * 360,
     duration: 15 + Math.random() * 20,
     delay: Math.random() * -20,
     scale: 0.5 + Math.random() * 1.5,
-    opacity: 0.03 + Math.random() * 0.07,
+    opacity: 0.05 + Math.random() * 0.1,
   }));
 
   return (
-    <div className="fixed inset-0 overflow-hidden">
+    <div className="fixed inset-0 overflow-hidden [perspective:1000px]">
       {/* Gradient spheres */}
       <div className="absolute w-[40vw] h-[40vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(13,115,119,0.8)] to-[rgba(181,101,216,0.4)] -top-[10%] -left-[10%] animate-[float-1_15s_ease-in-out_infinite_alternate]" />
       <div className="absolute w-[45vw] h-[45vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(99,102,241,0.8)] to-[rgba(236,72,153,0.4)] -bottom-[20%] -right-[10%] animate-[float-2_18s_ease-in-out_infinite_alternate]" />
@@ -130,11 +133,19 @@ export function GradientBackground() {
             opacity: letter.opacity,
             fontSize: `${letter.scale * 5}rem`,
             transform: "translate(-50%, -50%)",
-            animation: `float-letter ${letter.duration}s infinite linear`,
+            animation: `float-3d ${letter.duration}s infinite linear`,
             animationDelay: `${letter.delay}s`,
+            textShadow: "0 0 15px rgba(255,255,255,0.2)",
           }}
         >
-          {letter.text}
+          <div
+            style={{
+              transform: `rotateX(${letter.rotateX}deg) rotateY(${letter.rotateY}deg) rotateZ(${letter.rotateZ}deg)`,
+              transformStyle: "preserve-3d",
+            }}
+          >
+            {letter.text}
+          </div>
         </div>
       ))}
 
