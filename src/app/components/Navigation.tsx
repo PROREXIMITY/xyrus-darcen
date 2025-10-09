@@ -30,7 +30,7 @@ function Navigation() {
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className={`${audiowide.className} text-2xl font-bold bg-white bg-clip-text text-transparent`}
+            className={`${audiowide.className} text-2xl font-bold text-white hover:scale-110 transition-all duration-300`}
           >
             XRD
           </a>
