@@ -147,6 +147,17 @@
   }
 }
 
+/* Letter Floating Animation */
+
+@keyframes float-letter {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translate(100px) rotate(-360deg);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

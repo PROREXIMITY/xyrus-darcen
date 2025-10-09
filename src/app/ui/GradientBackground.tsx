@@ -1,12 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+import { Audiowide } from "next/font/google";
+
+const audiowide = Audiowide({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 function createParticle(container: HTMLDivElement) {
-  const particle = document.createElement('div');
+  const particle = document.createElement("div");
   const size = Math.random() * 3 + 1;
 
-  particle.className = 'absolute rounded-full bg-white/20 pointer-events-none';
+  particle.className = "absolute rounded-full bg-white/20 pointer-events-none";
   particle.style.width = `${size}px`;
   particle.style.height = `${size}px`;
 
@@ -21,7 +28,7 @@ function resetParticle(particle: HTMLDivElement) {
 
   particle.style.left = `${posX}%`;
   particle.style.top = `${posY}%`;
-  particle.style.opacity = '0';
+  particle.style.opacity = "0";
 
   return { x: posX, y: posY };
 }
@@ -69,10 +76,11 @@ export function GradientBackground() {
       const mouseX = (e.clientX / window.innerWidth) * 100;
       const mouseY = (e.clientY / window.innerHeight) * 100;
 
-      const particle = document.createElement('div');
+      const particle = document.createElement("div");
       const size = Math.random() * 4 + 2;
 
-      particle.className = 'absolute rounded-full bg-white/40 pointer-events-none';
+      particle.className =
+        "absolute rounded-full bg-white/40 pointer-events-none";
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.left = `${mouseX}%`;
@@ -81,31 +89,63 @@ export function GradientBackground() {
       container.appendChild(particle);
 
       setTimeout(() => {
-        particle.style.transition = 'all 2s ease-out';
+        particle.style.transition = "all 2s ease-out";
         particle.style.left = `${mouseX + (Math.random() * 10 - 5)}%`;
         particle.style.top = `${mouseY + (Math.random() * 10 - 5)}%`;
-        particle.style.opacity = '0';
+        particle.style.opacity = "0";
 
         setTimeout(() => particle.remove(), 2000);
       }, 10);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const floatingLetters = Array.from({ length: 15 }).map((_, i) => ({
+    text: ["X", "R", "D"][i % 3],
+    initialX: Math.random() * 100,
+    initialY: Math.random() * 100,
+    duration: 15 + Math.random() * 20,
+    delay: Math.random() * -20,
+    scale: 0.5 + Math.random() * 1.5,
+    opacity: 0.03 + Math.random() * 0.07,
+  }));
 
   return (
     <div className="fixed inset-0 overflow-hidden">
       {/* Gradient spheres */}
-      <div className="absolute w-[40vw] h-[40vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(255,0,128,0.8)] to-[rgba(255,102,0,0.4)] -top-[10%] -left-[10%] animate-[float-1_15s_ease-in-out_infinite_alternate]" />
-      <div className="absolute w-[45vw] h-[45vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(72,0,255,0.8)] to-[rgba(0,183,255,0.4)] -bottom-[20%] -right-[10%] animate-[float-2_18s_ease-in-out_infinite_alternate]" />
-      <div className="absolute w-[30vw] h-[30vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(133,89,255,0.5)] to-[rgba(98,216,249,0.3)] top-[60%] left-[20%] animate-[float-3_20s_ease-in-out_infinite_alternate]" />
+      <div className="absolute w-[40vw] h-[40vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(13,115,119,0.8)] to-[rgba(181,101,216,0.4)] -top-[10%] -left-[10%] animate-[float-1_15s_ease-in-out_infinite_alternate]" />
+      <div className="absolute w-[45vw] h-[45vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(99,102,241,0.8)] to-[rgba(236,72,153,0.4)] -bottom-[20%] -right-[10%] animate-[float-2_18s_ease-in-out_infinite_alternate]" />
+      <div className="absolute w-[30vw] h-[30vw] rounded-full blur-[60px] bg-gradient-to-br from-[rgba(6,182,212,0.5)] to-[rgba(167,139,250,0.3)] top-[60%] left-[20%] animate-[float-3_20s_ease-in-out_infinite_alternate]" />
+      {/* Floating Letters */}
+      {floatingLetters.map((letter, index) => (
+        <div
+          key={index}
+          className={`absolute ${audiowide.className} select-none pointer-events-none`}
+          style={{
+            left: `${letter.initialX}%`,
+            top: `${letter.initialY}%`,
+            color: "white",
+            opacity: letter.opacity,
+            fontSize: `${letter.scale * 5}rem`,
+            transform: "translate(-50%, -50%)",
+            animation: `float-letter ${letter.duration}s infinite linear`,
+            animationDelay: `${letter.delay}s`,
+          }}
+        >
+          {letter.text}
+        </div>
+      ))}
 
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[length:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] z-20" />
 
       {/* Particles container */}
-      <div ref={particlesContainerRef} className="absolute inset-0 z-30 pointer-events-none" />
+      <div
+        ref={particlesContainerRef}
+        className="absolute inset-0 z-30 pointer-events-none"
+      />
     </div>
   );
 }
