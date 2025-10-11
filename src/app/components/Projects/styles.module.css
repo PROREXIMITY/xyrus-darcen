@@ -1,0 +1,53 @@
+/* Gradient Animations */
+@keyframes border-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradientBorder {
+  background-size: 200% 200%;
+  animation: border-spin 8s linear infinite;
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradientX {
+  background-size: 200% 100%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Hover Animations */
+.hoverGlow {
+  transition: all 0.3s ease-in-out;
+}
+
+.hoverGlow:hover {
+  filter: drop-shadow(0 0 0.5rem rgba(200, 80, 192, 0.4));
+}
+
+/* Utility Classes */
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbarHide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

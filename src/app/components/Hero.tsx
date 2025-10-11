@@ -1,5 +1,4 @@
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { audio } from "framer-motion/client";
 import { Audiowide } from "next/font/google";
 
 const audiowide = Audiowide({
