@@ -1,76 +1,83 @@
 const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Flutter Flow",
-  "Bootstrap",
-  "Tailwind",
-  "Shadcn UI",
-  "Git",
-  "GitHub",
-  "Bitbucket",
-  "Node.js",
-  "Figma",
-  "MySQL",
-  "Firebase",
-  "MongoDB",
-
-  // Add the other skills like view more for Adobe Skills
+  { name: "Frontend", items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"] },
+  { name: "UI/Design", items: ["Tailwind", "Bootstrap", "Shadcn UI", "Flutter Flow", "Figma"] },
+  { name: "Backend", items: ["Node.js", "Firebase", "MongoDB"] },
+  { name: "Tools", items: ["Git", "GitHub", "Bitbucket"] },
 ];
 
 export default function About() {
   return (
     <section
       id="about"
-      className="bg-[rgba(11,11,15,0.95)] text-white mt-[20px] md:mt-[10px] py-[50px]"
+      className="relative min-h-screen py-20"
     >
-      <div className="max-w-[1200px] mx-auto px-5">
-        <h2 className="text-center mb-10">
-          <span className="text-[30px] md:text-[40px] block mb-[10px]">
-            ABOUT ME
-          </span>
-          <hr className="gradient-hr mx-auto" />
-          <span className="text-[16px] md:text-[20px] font-light block mb-[40px] md:mb-[70px] px-4">
+      {/* Background with grid and gradient overlay */}
+      <div className="absolute inset-0 bg-[rgba(11,11,15,0.97)] z-0">
+        <div className="absolute inset-0 bg-[length:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5">
+        {/* Header Section */}
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            <span className="bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent [text-shadow:0_0_10px_rgba(255,255,255,0.2)]">
+              ABOUT ME
+            </span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Here you will find more information about me, what I do, and my
             current skills mostly in terms of programming and technology.
-          </span>
-        </h2>
+          </p>
+        </div>
 
-        <div className="flex flex-col md:flex-row justify-between mt-[30px] mb-[100px] md:mb-[220px] px-4 md:px-[30px] gap-10">
-          <div className="flex-1 mr-0 md:mr-[50px]">
-            <h3 className="text-[1.5em] md:text-[1.8em] mb-5">
-              Get to know me!
+        {/* Main Content Grid */}
+        <div className="grid md:grid-cols-[1fr,auto,1fr] gap-8 md:gap-12">
+          {/* About Me Section */}
+          <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Get to know me
             </h3>
-            <div className="space-y-5">
-              <p className="text-[18px] md:text-[25px] leading-[1.6]">
-                I am a{" "}
-                <strong className="font-bold text-[#fd6553]">
-                  Full-Stack Web Developer
-                </strong>{" "}
-                building and managing the backend and frontend of Web
-                Applications that lead to the success of the overall project.
+            <div className="space-y-6 text-gray-300">
+              <p className="leading-relaxed">
+                I am a <span className="text-[rgba(236,72,153,0.8)] font-semibold">Full-Stack Web Developer</span> building
+                and managing the backend and frontend of Web Applications that lead to the success of the overall project.
               </p>
-              <p className="text-[18px] md:text-[25px] leading-[1.6]">
-                In addition to my interest for web development, I also enjoy
-                video editing. I find it fascinating to create visually engaging
-                content that tells a story and captures the audience&apos;s
-                attention.
+              <p className="leading-relaxed">
+                In addition to my interest for web development, I also enjoy video editing. 
+                I find it fascinating to create visually engaging content that tells a story 
+                and captures the audience&apos;s attention.
               </p>
             </div>
           </div>
 
-          <div className="flex-1">
-            <h3 className="text-[1.5em] md:text-[1.8em] mb-5">My Skills</h3>
-            <div className="flex flex-wrap gap-[10px]">
-              {skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-[#333333] text-white py-2 md:py-3 px-3 md:px-4 rounded-[5px] text-[14px] md:text-[16px]"
-                >
-                  {skill}
+          {/* Divider */}
+          <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-white/20 to-transparent mx-auto" />
+
+          {/* Skills Section */}
+          <div className="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              My Skills
+            </h3>
+            <div className="space-y-6">
+              {skills.map((category) => (
+                <div key={category.name} className="space-y-3">
+                  <h4 className="text-sm uppercase tracking-wider text-gray-400">
+                    {category.name}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-sm rounded-full 
+                          bg-gradient-to-r from-[rgba(99,102,241,0.1)] to-[rgba(236,72,153,0.1)]
+                          border border-white/10 hover:border-white/20 
+                          transition-all duration-300 hover:scale-105
+                          text-gray-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
