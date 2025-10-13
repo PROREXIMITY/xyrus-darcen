@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { skills } from "@/app/components/data/mockData";
-import { FaLaptopCode, FaPalette, FaServer, FaTools } from "react-icons/fa";
+import { FaLaptopCode} from "react-icons/fa";
 
 export default function About() {
   const [activeSkill, setActiveSkill] = useState<number | null>(null);
@@ -202,7 +202,7 @@ export default function About() {
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-white font-semibold mb-1">
-                    Let's work together
+                    Let&apos;s work together
                   </div>
                   <div className="text-xs text-gray-400">Get in touch →</div>
                 </div>
