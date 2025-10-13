@@ -24,7 +24,7 @@ function Projects() {
           <h2 className="font-bold text-5xl md:text-6xl mb-6 bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent">
             PROJECTS
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
+          {/* <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div> */}
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Here are the projects that I worked on, showcasing my skills for
             both personal and collaborative works.
