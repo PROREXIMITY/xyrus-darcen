@@ -84,7 +84,7 @@ export default function Contact() {
 
           <h2 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-gray-400 via-white to-gray-400 bg-clip-text text-transparent">
-              LET'S CONNECT
+              LET&apos;S CONNECT
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
@@ -109,7 +109,7 @@ export default function Contact() {
               </div>
 
               <p className="text-gray-400 mb-6 text-sm md:text-base">
-                Prefer email? Send me a message and I'll get back to you as soon as possible.
+                Prefer email? Send me a message and I&apos;ll get back to you as soon as possible.
               </p>
 
               {/* Updated Email Display */}
