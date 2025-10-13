@@ -70,27 +70,33 @@ function Navigation() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-white hover:text-[#FF512F] transition-colors"
+                className="relative group text-white/80 hover:text-white transition-colors duration-300"
               >
-                {item}
+                <span className="relative">
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-[rgb(255,204,112)] group-hover:w-full transition-all duration-300" />
+                </span>
               </a>
             ))}
           </div>
-        </div>
 
-        {/* Mobile menu */}
-        <div className={`${isMenuOpen ? "block" : "hidden"} lg:hidden mt-4`}>
-          <div className="flex flex-col space-y-4">
-            {["Home", "About", "Projects", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-white hover:text-[#FF512F] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+          {/* Mobile menu */}
+          <div className={`${isMenuOpen ? "block" : "hidden"} lg:hidden mt-4`}>
+            <div className="flex flex-col space-y-4">
+              {["Home", "About", "Projects", "Contact"].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="relative group text-white/80 hover:text-white transition-colors duration-300 w-fit"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="relative">
+                    {item}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-[rgb(255,204,112)] group-hover:w-full transition-all duration-300" />
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

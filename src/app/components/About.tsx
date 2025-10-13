@@ -2,10 +2,67 @@
 
 import React, { useState } from "react";
 import { skills } from "@/app/components/data/mockData";
-import { FaLaptopCode} from "react-icons/fa";
+import { FaLaptopCode, FaArrowLeft } from "react-icons/fa";
+import Image from "next/image";
+import ExperienceCards from "@/app/components/Experience";
 
 export default function About() {
   const [activeSkill, setActiveSkill] = useState<number | null>(null);
+  const [showEducation, setShowEducation] = useState(false);
+  const [activeType, setActiveType] = useState<"education" | "organization">(
+    "education"
+  );
+
+  // Early return for education content
+  if (showEducation) {
+    return (
+      <section className="relative min-h-screen py-20 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-[rgba(11,11,15,0.97)] z-0">
+          <div className="absolute inset-0 bg-[length:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
+
+          {/* Floating Gradient Orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px] animate-float-slow" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-float-slower" />
+        </div>
+
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5">
+          {/* Back Button */}
+          <button
+            onClick={() => setShowEducation(false)}
+            className="group flex items-center gap-2 mb-8 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300"
+          >
+            <FaArrowLeft className="text-purple-400 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-white/80 group-hover:text-white">
+              Back to About
+            </span>
+          </button>
+
+          {/* Toggle Buttons */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex rounded-2xl bg-black/40 backdrop-blur-xl p-1.5 border border-white/10">
+              {(["education", "organization"] as const).map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setActiveType(type)}
+                  className={`px-8 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                    activeType === type
+                      ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Experience Cards */}
+          <ExperienceCards activeType={activeType} />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="about" className="relative min-h-screen py-20 overflow-hidden">
@@ -164,50 +221,43 @@ export default function About() {
               </div>
             </div>
 
-            {/* Education Card - New for Fresh Grad */}
-            <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 backdrop-blur-xl p-6 rounded-2xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-yellow-500/20 rounded-xl flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l9-5-9-5-9 5 9 5z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">Education</div>
-                  <div className="text-white font-semibold">
-                    Recent Graduate 2025
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Card */}
-            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group cursor-pointer">
+            {/* Education Card - Modified to be clickable */}
+            <button
+              onClick={() => setShowEducation(true)}
+              className="w-full text-left bg-gradient-to-br from-yellow-500/10 to-amber-500/10 backdrop-blur-xl p-6 rounded-2xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 group"
+            >
               <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-white font-semibold mb-1">
-                    Let&apos;s work together
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-yellow-500/20 rounded-xl flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 14l9-5-9-5-9 5 9 5z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                      />
+                    </svg>
                   </div>
-                  <div className="text-xs text-gray-400">Get in touch →</div>
+                  <div>
+                    <div className="text-xs text-gray-500">Background</div>
+                    <div className="text-white font-semibold">
+                      Education & Organizations
+                    </div>
+                  </div>
                 </div>
                 <svg
-                  className="w-6 h-6 text-purple-400 transform group-hover:translate-x-1 transition-transform"
+                  className="w-5 h-5 text-yellow-400 transform group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -216,11 +266,49 @@ export default function About() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    d="M9 5l7 7-7 7"
                   />
                 </svg>
               </div>
-            </div>
+            </button>
+
+            {/* CTA Card - Let's work together */}
+            <a
+              href="#contact"
+              className="block bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group relative overflow-hidden"
+            >
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+              <div className="flex items-center justify-between relative">
+                <div>
+                  <div className="text-white font-semibold mb-1 group-hover:text-purple-300 transition-colors">
+                    Let&apos;s work together
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-gray-400">
+                    Get in touch
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      →
+                    </span>
+                  </div>
+                </div>
+                <div className="h-10 w-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                  <svg
+                    className="w-5 h-5 text-purple-400 transform rotate-45 group-hover:-rotate-45 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
           </div>
 
           {/* Skills Section - Full Width */}
@@ -333,3 +421,4 @@ export default function About() {
     </section>
   );
 }
+
