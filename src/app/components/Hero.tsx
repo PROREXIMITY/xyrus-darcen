@@ -22,9 +22,6 @@ export function Hero() {
         <div className="[&_*]:text-[#bebebe] [&_*]:text-xl [&_*]:md:text-2xl [&_*]:tracking-widest ">
           <TextGenerateEffect words="FULL-STACK WEB DEVELOPER" duration={2} />
         </div>
-        {/* <p className="text-xl md:text-2xl text-[#bebebe] tracking-wider">
-          FULL-STACK WEB DEVELOPER
-        </p> */}
       </div>
     </section>
   );
