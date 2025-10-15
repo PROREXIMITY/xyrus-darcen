@@ -25,23 +25,23 @@ export const projects: Project[] = [
     githubLink: undefined // Github link is undefined for this project because it is a private repository for a company
   },
   {
-    title: "Advance Web",
+    title: "E-Commerce Web Application",
     image: "/assets/AdvWeb.png",
-    description: "Full Stack Developer building an advanced web application with cutting-edge technologies. Implemented RESTful APIs, database architecture, and authentication systems.",
-    tech: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
+    description: "Developed an e-commerce web application using React and Firebase. Built core features like product addition, display, cart functionality, and user authentication, with a clean and partially responsive interface.",
+    tech: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
     year: "2024",
     category: "Full-Stack",
-    liveLink: "#",
-    githubLink: "#"
+    liveLink: "https://xrd-commerce.vercel.app/",
+    githubLink: "https://github.com/PROREXIMITY/e-commerce"
   },
   {
     title: "LX Event Pro Website",
     image: "/assets/lxlogo.png",
     description: "Sole Developer creating a comprehensive event management platform. Built real-time booking systems, payment integration, and responsive mobile interfaces.",
-    tech: ["PHP", "HTML", "CSS", "Tailwind", "MySQL"],
+    tech: ["HTML", "CSS", "PHP", "PHPMailer", "MySQL"],
     year: "2024",
     category: "Full-Stack",
-    liveLink: "#",
+    liveLink: "https://proreximity.github.io/lxeventspro/",
     githubLink: undefined
   },
 ];
@@ -140,7 +140,7 @@ export const socialLinks: SocialLink[] = [
 
 // For Experience Section
 interface Experience {
-  type: 'education' | 'organization';
+  type: 'education' | 'organization' | 'intern';
   title: string;
   institution: string;
   period: string;
@@ -210,6 +210,23 @@ export const experiences: Experience[] = [
       'Ensured all visual content was high-quality and on-brand, directly supporting the organization\'s goals.',
     ]
   },
+
+
+  {
+    type: 'intern',
+    title: 'Full-StackWeb Developer Intern',
+    institution: 'Creciendo PH',
+    period: 'December 2024 - June 2025',
+    description: 'Working on full-stack development projects using modern web technologies.',
+    image: '/assets/internship.jpeg',
+    achievements: [
+      'Developed and maintained responsive web applications',
+      'Collaborated with developers on production projects',
+      'Implemented new features using React/Next.js and Node.js',
+      'Participated in agile development processes'
+    ]
+  },
+
 
 ];
 

@@ -9,9 +9,9 @@ import ExperienceCards from "@/app/components/Experience";
 export default function About() {
   const [activeSkill, setActiveSkill] = useState<number | null>(null);
   const [showEducation, setShowEducation] = useState(false);
-  const [activeType, setActiveType] = useState<"education" | "organization">(
-    "education"
-  );
+  const [activeType, setActiveType] = useState<
+    "education" | "organization" | "intern"
+  >("education");
 
   // Early return for education content
   if (showEducation) {
@@ -41,11 +41,11 @@ export default function About() {
           {/* Toggle Buttons */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex rounded-2xl bg-black/40 backdrop-blur-xl p-1.5 border border-white/10">
-              {(["education", "organization"] as const).map((type) => (
+              {(["education", "organization", "intern"] as const).map((type) => (
                 <button
                   key={type}
                   onClick={() => setActiveType(type)}
-                  className={`px-8 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     activeType === type
                       ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
                       : "text-gray-400 hover:text-white"
