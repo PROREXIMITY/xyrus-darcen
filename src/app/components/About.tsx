@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { skills } from "@/app/components/data/mockData";
 import { FaLaptopCode, FaArrowLeft } from "react-icons/fa";
-import Image from "next/image";
 import ExperienceCards from "@/app/components/Experience";
 
 export default function About() {
