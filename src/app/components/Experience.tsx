@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { experiences } from '@/app/components/data/mockData';
+import { experiences} from '@/app/components/data/mockData';
 
 interface ExperienceCardsProps {
-  activeType: 'education' | 'organization';
+  activeType: 'education' | 'organization' | 'intern';
 }
 
 export default function ExperienceCards({ activeType }: ExperienceCardsProps) {
