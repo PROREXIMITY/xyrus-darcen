@@ -218,7 +218,7 @@ export const experiences: Experience[] = [
     institution: 'Creciendo PH',
     period: 'December 2024 - June 2025',
     description: 'Working on full-stack development projects using modern web technologies.',
-    image: '/assets/internship.jpeg',
+    image: '/assets/internship.JPEG',
     achievements: [
       'Developed and maintained responsive web applications',
       'Collaborated with developers on production projects',
