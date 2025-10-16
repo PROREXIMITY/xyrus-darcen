@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     title: "Creciendo Website",
     image: "/assets/Creciendo.jpg",
-    description: "Lead Frontend Developer for this modern business website with elegant design and smooth animations. Focused on creating seamless user experiences and optimized performance.",
+    description: "Frontend Developer for this modern business website with elegant design and smooth animations. Focused on creating seamless user experiences and optimized performance.",
     tech: ["JavaScript", "HTML", "CSS", "Tailwind", "React", "Next.JS", "MongoDB", "AWS S3", "DaisyUI", "ReCharts", "Bitbucket", "Jira"],
     year: "2025",
     category: "Web Developer",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     title: "LX Event Pro Website",
     image: "/assets/lxlogo.png",
-    description: "Sole Developer creating a comprehensive event management platform. Built real-time booking systems, payment integration, and responsive mobile interfaces.",
+    description: "Developed a full-featured event management platform showcasing sound system services. Includes responsive design, image galleries, real-time booking, payment integration, and a contact form for client inquiries. Features an admin dashboard that allows the business owner to easily update and manage content.",
     tech: ["HTML", "CSS", "PHP", "PHPMailer", "MySQL"],
     year: "2024",
     category: "Full-Stack",
