@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     title: "LX Event Pro Website",
     image: "/assets/lxlogo.png",
-    description: "Developed a full-featured event management platform showcasing sound system services. Includes responsive design, image galleries, real-time booking, payment integration, and a contact form for client inquiries. Features an admin dashboard that allows the business owner to easily update and manage content.",
+    description: "Developed a responsive event management platform for sound system services with image galleries, real-time booking, payment integration, contact form, and an admin dashboard for easy content management.",
     tech: ["HTML", "CSS", "PHP", "PHPMailer", "MySQL"],
     year: "2024",
     category: "Full-Stack",
