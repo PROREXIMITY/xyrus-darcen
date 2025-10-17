@@ -41,7 +41,7 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "PHP", "PHPMailer", "MySQL"],
     year: "2024",
     category: "Full-Stack",
-    liveLink: "https://proreximity.github.io/lxeventspro/",
+    liveLink: "https://github.com/PROREXIMITY",
     githubLink: undefined
   },
 ];
