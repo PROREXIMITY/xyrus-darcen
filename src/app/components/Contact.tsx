@@ -8,7 +8,7 @@ export default function Contact() {
 
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("xyrusdarcen27@gmail.com");
+    navigator.clipboard.writeText("rusdarcen@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -65,7 +65,7 @@ export default function Contact() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/assets/Xyrus_Darcen.pdf"
+                  href="/assets/Xyrus_Darcen_Resume.pdf"
                   download
                   className="w-full inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white text-sm sm:text-base font-semibold hover:scale-[1.02] transition-transform duration-300 hover:shadow-xl hover:shadow-purple-500/50"
                 >
@@ -75,7 +75,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="/assets/Xyrus_Darcen.pdf"
+                  href="/assets/Xyrus_Darcen_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-black/30 hover:bg-black/50 rounded-xl text-white text-sm sm:text-base font-semibold hover:scale-[1.02] transition-all duration-300 border border-white/10 hover:border-purple-500/50"
@@ -113,7 +113,7 @@ export default function Contact() {
                   <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
                   </svg>
-                  <span className="text-white text-xs sm:text-sm font-mono break-all">xyrusdarcen27@gmail.com</span>
+                  <span className="text-white text-xs sm:text-sm font-mono break-all">rusdarcen@gmail.com</span>
                 </div>
                 <button
                   onClick={copyEmail}
@@ -124,7 +124,7 @@ export default function Contact() {
               </div>
 
               <a
-                href="mailto:xyrusdarcen27@gmail.com"
+                href="mailto:rusdarcen@gmail.com"
                 className="w-full inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white text-sm sm:text-base font-semibold hover:scale-[1.02] transition-transform duration-300 hover:shadow-xl hover:shadow-purple-500/50"
               >
                 <span>Send Email</span>
