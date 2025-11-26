@@ -5,8 +5,26 @@ import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import styles from "./styles.module.css";
 import { projects } from "@/app/components/data/mockData";
+import CarouselModal from "./CarouselModal";
+
 function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImages, setModalImages] = useState<string[]>([]);
+  const [modalStartIndex, setModalStartIndex] = useState(0);
+
+  const openCarousel = (images: string[], startIndex = 0) => {
+    setModalImages(images.length ? images : []);
+    setModalStartIndex(startIndex);
+    setModalOpen(true);
+  };
+
+  const closeCarousel = () => {
+    setModalOpen(false);
+    setModalImages([]);
+    setModalStartIndex(0);
+  };
 
   return (
     <section
@@ -119,38 +137,83 @@ function Projects() {
                           index % 2 === 0 ? "md:border-l" : "md:border-r"
                         } border-white/10`}
                       >
-                        {/* Primary Button - View Live */}
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group/primary block"
-                        >
-                          <div
-                            className={`relative overflow-hidden flex items-center justify-between p-4 bg-gradient-to-r from-[rgb(65,88,208)] via-[rgb(200,80,192)] to-[rgb(255,204,112)] rounded-xl ${styles.gradientX} ${styles.hoverGlow}`}
-                          >
-                            <span className="text-white font-bold">
-                              View Project
-                            </span>
-                            <svg
-                              className="w-5 h-5 text-white transform group-hover/primary:translate-x-1 transition-transform duration-300"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                              />
-                            </svg>
-                            {/* Shimmer effect on hover */}
-                            <div className="absolute inset-0 -translate-x-full group-hover/primary:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-                          </div>
-                        </a>
+                        {/* Primary Button - prefer liveLink when available; open carousel only if repo is private AND liveLink is absent or points to GitHub */}
+                        {(() => {
+                          const prefersCarousel =
+                            project.githubLink === undefined &&
+                            (!project.liveLink ||
+                              project.liveLink.trim() === "" ||
+                              project.liveLink.includes("github.com"));
 
-                        {/* Secondary Button or Private Badge */}
+                          if (prefersCarousel) {
+                            return (
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  openCarousel(
+                                    project.screenshots && project.screenshots.length
+                                      ? project.screenshots
+                                      : [project.image],
+                                    0
+                                  )
+                                }
+                                className="group/primary block"
+                                aria-label={`Open images for ${project.title}`}
+                              >
+                                <div
+                                  className={`relative overflow-hidden flex items-center justify-between p-4 bg-gradient-to-r from-[rgb(65,88,208)] via-[rgb(200,80,192)] to-[rgb(255,204,112)] rounded-xl ${styles.gradientX} ${styles.hoverGlow}`}
+                                >
+                                  <span className="text-white font-bold">View Project</span>
+                                  <svg
+                                    className="w-5 h-5 text-white transform group-hover/primary:translate-x-1 transition-transform duration-300"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                  </svg>
+                                  <div className="absolute inset-0 -translate-x-full group-hover/primary:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                                </div>
+                              </button>
+                            );
+                          }
+
+                          return (
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/primary block"
+                            >
+                              <div
+                                className={`relative overflow-hidden flex items-center justify-between p-4 bg-gradient-to-r from-[rgb(65,88,208)] via-[rgb(200,80,192)] to-[rgb(255,204,112)] rounded-xl ${styles.gradientX} ${styles.hoverGlow}`}
+                              >
+                                <span className="text-white font-bold">View Project</span>
+                                <svg
+                                  className="w-5 h-5 text-white transform group-hover/primary:translate-x-1 transition-transform duration-300"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                  />
+                                </svg>
+                                <div className="absolute inset-0 -translate-x-full group-hover/primary:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                              </div>
+                            </a>
+                          );
+                        })()}
+
+                        {/* Secondary Button or Carousel Trigger */}
                         {project.githubLink ? (
                           <a
                             href={project.githubLink}
@@ -231,6 +294,14 @@ function Projects() {
           ))}
         </div>
       </div>
+
+      {/* use the extracted CarouselModal */}
+      <CarouselModal
+        images={modalImages}
+        open={modalOpen}
+        startIndex={modalStartIndex}
+        onClose={closeCarousel}
+      />
     </section>
   );
 }

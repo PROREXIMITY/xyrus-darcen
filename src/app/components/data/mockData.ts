@@ -11,6 +11,7 @@ interface Project {
   category: string;
   liveLink: string;
   githubLink: string | undefined;
+  screenshots?: string[]; // added optional screenshots for carousel
 }
 
 export const projects: Project[] = [
@@ -35,7 +36,8 @@ export const projects: Project[] = [
     ],
     year: "2025",
     category: "Web Developer",
-    liveLink: "https://www.creciendo.com.ph/home",
+    // liveLink: "https://www.creciendo.com.ph/home",
+    liveLink: "https://www.creciendo.com.ph/social-media-channels",
     githubLink: undefined, // Github link is undefined for this project because it is a private repository for a company
   },
   {
@@ -48,6 +50,10 @@ export const projects: Project[] = [
     category: "Frontend",
     liveLink: "https://github.com/PROREXIMITY",
     githubLink: undefined,
+    screenshots: [
+      "/assets/POS.jpg",
+      "/assets/POS.jpg"
+    ],
   },
   {
     title: "E-Commerce Web Application",
@@ -70,6 +76,11 @@ export const projects: Project[] = [
     category: "Full-Stack",
     liveLink: "https://github.com/PROREXIMITY",
     githubLink: undefined,
+    screenshots: [
+      "/assets/LX/LX1.png",
+      "/assets/LX/LX2.png",
+      "/assets/LX/LX3.png"
+    ],
   },
 ];
 
