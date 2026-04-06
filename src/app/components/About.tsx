@@ -74,7 +74,7 @@ export default function About() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-float-slower" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5">
+      <div className="relative z-10 max-w-[1300px] mx-auto px-5">
         {/* Header with Animated Badge */}
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-full mb-4">
@@ -139,21 +139,19 @@ export default function About() {
                     Creative Side
                   </p>
                   <p className="text-base leading-relaxed">
-                    Beyond code, I explore{" "}
-                    <span className="text-white font-semibold">
-                      video editing
-                    </span>{" "}
-                    to craft compelling visual narratives. I believe great
-                    products need both solid engineering and captivating
-                    storytelling.
+                    On the creative side, I create graphic designs and{" "} 
+                    <span className="text-white font-semibold">publication materials</span>
+                    , along with{" "}
+                    <span className="text-white font-semibold">video editing with motion graphics</span>
+                    , combining my love for design and storytelling to bring ideas to life in visually appealing ways.
                   </p>
                 </div>
 
                 {/* Stats Row */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                <div className="flex flex-wrap justify-between gap-4 pt-6 border-t border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-                      Fresh Grad
+                      Creative Developer
                     </div>
                     <div className="text-xs text-gray-500">Ready to Learn</div>
                   </div>
@@ -316,7 +314,7 @@ export default function About() {
               Technical Arsenal
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
               {skills.map((category, index) => (
                 <div
                   key={category.name}
@@ -345,7 +343,7 @@ export default function About() {
                     </div>
 
                     {/* Skills Tags */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {category.items.map((skill, i) => (
                         <span
                           key={skill}

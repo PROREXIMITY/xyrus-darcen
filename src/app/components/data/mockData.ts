@@ -1,4 +1,4 @@
-import { FaLaptopCode, FaPalette, FaServer, FaTools } from "react-icons/fa";
+import { FaLaptopCode, FaPalette, FaServer, FaTools, FaFilm } from "react-icons/fa";
 
 // Projects Data section
 
@@ -124,6 +124,8 @@ export const skills: Skill[] = [
   {
     name: "Backend & Data",
     items: [
+      "Laravel",
+      "PHP",
       "Node.js",
       "Express.js",
       "Firebase",
@@ -137,10 +139,22 @@ export const skills: Skill[] = [
   },
   {
     name: "Tools & Devops",
-    items: ["Git", "GitHub", "Bitbucket", "AWS S3"],
+    items: ["Git", "GitHub", "Bitbucket", "AWS S3", "Laragon"],
     icon: FaTools,
     color: "from-orange-500 to-red-500",
   },
+  {
+  name: "Creative Tools",
+  items: [
+    "Adobe Photoshop",
+    "Adobe Premiere Pro",
+    "Adobe After Effects",
+    "Capcut",
+    "DaVinci Resolve",
+  ],
+  icon: FaFilm, // or FaPaintBrush
+  color: "from-pink-500 to-rose-500",
+}
 ];
 
 interface SocialLink {
