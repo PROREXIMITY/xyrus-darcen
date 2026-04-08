@@ -2,7 +2,7 @@ import { FaLaptopCode, FaPalette, FaServer, FaTools, FaFilm } from "react-icons/
 
 // Projects Data section
 
-interface Project {
+export interface Project {
   title: string;
   image: string;
   description: string;
@@ -81,6 +81,48 @@ export const projects: Project[] = [
       "/assets/LX/LX2.png",
       "/assets/LX/LX3.png"
     ],
+  },
+];
+
+// Creative Works section
+export interface CreativeWork {
+  title: string;
+  subtitle: string;
+  image: string;
+  videoUrl?: string; // optional video link for video projects
+  type: "image" | "video";
+}
+
+export const creativeWorks: CreativeWork[] = [
+  {
+    title: "Brand Launch Visual",
+    subtitle: "Bold promotional asset for a creative campaign.",
+    image: "/assets/LX/LX1.png",
+    type: "image",
+  },
+  {
+    title: "Logo Reveal Thumbnail",
+    subtitle: "Motion-ready thumbnail for brand identity videos.",
+    image: "/assets/LX/LX2.png",
+    type: "video",
+  },
+  {
+    title: "Digital Pubmat",
+    subtitle: "High-impact print-inspired design for social media.",
+    image: "/assets/LX/LX3.png",
+    type: "image",
+  },
+  {
+    title: "Campaign Poster",
+    subtitle: "Modern graphic asset with premium glass effects.",
+    image: "/assets/POS.jpg",
+    type: "image",
+  },
+  {
+    title: "Motion Promo Tile",
+    subtitle: "Video teaser style creative with polished lighting.",
+    image: "/assets/AdvWeb.png",
+    type: "video",
   },
 ];
 
