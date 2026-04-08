@@ -25,11 +25,12 @@ export default function CreativeView({
   return (
     <>
       {(subFilter === "all" || subFilter === "image") && (
-        <div className="h-200 py-10">
+        <div className="py-10">
           <LayoutGrid
             cards={imageWorks.map((item, i) => ({
               id: i,
-              className: i % 3 === 0 ? "md:col-span-2" : "col-span-1",
+              // className: i % 3 === 0 ? "md:col-span-2" : "col-span-1",
+              className: item.isBanner ? "md:col-span-2" : "col-span-1",
               thumbnail: item.image,
               content: (
                 <div className="pointer-events-none">

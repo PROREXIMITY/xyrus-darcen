@@ -1,4 +1,10 @@
-import { FaLaptopCode, FaPalette, FaServer, FaTools, FaFilm } from "react-icons/fa";
+import {
+  FaLaptopCode,
+  FaPalette,
+  FaServer,
+  FaTools,
+  FaFilm,
+} from "react-icons/fa";
 
 // Projects Data section
 
@@ -45,15 +51,22 @@ export const projects: Project[] = [
     image: "/assets/POS.jpg",
     description:
       "A freelance project developed for Nanay Floras, a local pasalubong store, to replace manual inventory and sales tracking which previously caused stock loss, slow operations, and inconsistencies.",
-    tech: ["HTML", "CSS", "Javascript", "React", "Vite", "Electron.js", "Node.js", "CouchDB", "PouchDB"],
+    tech: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React",
+      "Vite",
+      "Electron.js",
+      "Node.js",
+      "CouchDB",
+      "PouchDB",
+    ],
     year: "2025",
     category: "Frontend",
     liveLink: "https://github.com/PROREXIMITY",
     githubLink: undefined,
-    screenshots: [
-      "/assets/POS.jpg",
-      "/assets/POS.jpg"
-    ],
+    screenshots: ["/assets/POS.jpg", "/assets/POS.jpg"],
   },
   {
     title: "E-Commerce Web Application",
@@ -79,7 +92,7 @@ export const projects: Project[] = [
     screenshots: [
       "/assets/LX/LX1.png",
       "/assets/LX/LX2.png",
-      "/assets/LX/LX3.png"
+      "/assets/LX/LX3.png",
     ],
   },
 ];
@@ -91,38 +104,117 @@ export interface CreativeWork {
   image: string;
   videoUrl?: string; // optional video link for video projects
   type: "image" | "video";
+  isBanner: boolean;
 }
 
 export const creativeWorks: CreativeWork[] = [
   {
-    title: "Brand Launch Visual",
-    subtitle: "Bold promotional asset for a creative campaign.",
-    image: "/assets/LX/LX1.png",
+    title: "Mosaic Musical",
+    subtitle: "Banner Design for a musical play.",
+    image: "/assets/publications/Mosaic-Musical.png",
     type: "image",
+    isBanner: true,
   },
   {
-    title: "Logo Reveal Thumbnail",
-    subtitle: "Motion-ready thumbnail for brand identity videos.",
-    image: "/assets/LX/LX2.png",
-    type: "video",
+    title: "CLAYGO",
+    subtitle: "Clean as you go design.",
+    image: "/assets/publications/CLAYGO.jpg",
+    type: "image",
+    isBanner: false,
   },
   {
-    title: "Digital Pubmat",
+    title: "AWS Baliwag",
+    subtitle: "Speaker posting for an event of AWS Cloud Club Baliwag.",
+    image: "/assets/publications/Speaker Posting.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "Tanghal Sining: Center for Performing Arts",
+    subtitle: "Cover photo for a school organization.",
+    image: "/assets/publications/Cover Photo.png",
+    type: "image",
+    isBanner: true,
+  },
+  {
+    title: "Senatorial Voter",
     subtitle: "High-impact print-inspired design for social media.",
-    image: "/assets/LX/LX3.png",
+    image: "/assets/publications/BAM.png",
     type: "image",
+    isBanner: false,
   },
   {
     title: "Campaign Poster",
-    subtitle: "Modern graphic asset with premium glass effects.",
-    image: "/assets/POS.jpg",
+    subtitle: "Video teaser style creative with polished lighting.",
+    image: "/assets/publications/Heidi.png",
     type: "image",
+    isBanner: false,
   },
   {
-    title: "Motion Promo Tile",
+    title: "Campaign Poster",
     subtitle: "Video teaser style creative with polished lighting.",
-    image: "/assets/AdvWeb.png",
+    image: "/assets/publications/Kiko.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "AWS Baliwag",
+    subtitle: "Speaker posting for an event of AWS Cloud Club Baliwag.",
+    image: "/assets/publications/cpa-teaser.png",
+    type: "image",
+    isBanner: true,
+  },
+  {
+    title: "Aurora Blizzard",
+    subtitle: "Created a logo for a team for a sports event.",
+    image: "/assets/publications/jersey-design.png",
+    type: "image",
+    isBanner: true,
+  },
+  {
+    title: "Aurora Blizzard",
+    subtitle: "Created a logo for a team for a sports event.",
+    image: "/assets/publications/champion.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "Aurora Blizzard",
+    subtitle: "Created a logo for a team for a sports event.",
+    image: "/assets/publications/Aurora_Blizzard_logo.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "Aurora Blizzard",
+    subtitle: "Created a logo for a team for a sports event.",
+    image: "/assets/publications/national_heroes.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "AWS Baliwag",
+    subtitle: "Speaker posting for an event of AWS Cloud Club Baliwag.",
+    image: "/assets/publications/Expressive.png",
+    type: "image",
+    isBanner: false,
+  },
+  {
+    title: "AWS Baliwag",
+    subtitle: "Speaker posting for an event of AWS Cloud Club Baliwag.",
+    image: "/assets/publications/up-grad.png",
+    type: "image",
+    isBanner: false,
+  },
+
+  //Video Projects
+  {
+    title: "AWS Baliwag",
+    subtitle: "Speaker posting for an event of AWS Cloud Club Baliwag.",
+    image: "/assets/publications/Kiko.png",
+    videoUrl: "/assets/videos/IntroOfCamps.mp4",
     type: "video",
+    isBanner: false,
   },
 ];
 
@@ -186,17 +278,17 @@ export const skills: Skill[] = [
     color: "from-orange-500 to-red-500",
   },
   {
-  name: "Creative Tools",
-  items: [
-    "Adobe Photoshop",
-    "Adobe Premiere Pro",
-    "Adobe After Effects",
-    "Capcut",
-    "DaVinci Resolve",
-  ],
-  icon: FaFilm, // or FaPaintBrush
-  color: "from-pink-500 to-rose-500",
-}
+    name: "Creative Tools",
+    items: [
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Capcut",
+      "DaVinci Resolve",
+    ],
+    icon: FaFilm, // or FaPaintBrush
+    color: "from-pink-500 to-rose-500",
+  },
 ];
 
 interface SocialLink {
