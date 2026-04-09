@@ -25,7 +25,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-flow-dense grid-cols-1 md:grid-cols-3 auto-rows-[400px]  max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full h-full p-10 grid grid-flow-dense grid-cols-1 md:grid-cols-3 md:auto-rows-[400px] max-w-7xl mx-auto gap-4 relative">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -37,7 +37,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
                 ? "rounded-lg cursor-pointer fixed inset-0 h-fit max-h-[90vh] w-fit max-w-[90%] m-auto z-50 flex justify-center items-center flex-wrap flex-col overflow-hidden"
                 : lastSelected?.id === card.id
                   ? "z-30 bg-white rounded-xl h-full w-full"
-                  : "bg-white rounded-xl h-full w-full",
+                  : "bg-white rounded-xl h-full w-full min-h-[250px]",
             )}
             layoutId={`card-${card.id}`}
           >
@@ -100,7 +100,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         animate={{
           opacity: 0.6,
         }}
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"
+        className="absolute inset-x-0 bottom-0 h-1/3 md:h-1/2  bg-gradient-to-t from-black/80 to-transparent z-10"
       />
       <motion.div
         layoutId={`content-${selected?.id}`}

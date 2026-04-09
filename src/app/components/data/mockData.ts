@@ -167,13 +167,6 @@ export const creativeWorks: CreativeWork[] = [
   {
     title: "Aurora Blizzard",
     subtitle: "Created a logo for a team for a sports event.",
-    image: "/assets/publications/jersey-design.webp",
-    type: "image",
-    isBanner: true,
-  },
-  {
-    title: "Aurora Blizzard",
-    subtitle: "Created a logo for a team for a sports event.",
     image: "/assets/publications/champion.webp",
     type: "image",
     isBanner: false,
@@ -184,6 +177,13 @@ export const creativeWorks: CreativeWork[] = [
     image: "/assets/publications/Aurora_Blizzard_logo.webp",
     type: "image",
     isBanner: false,
+  },
+  {
+    title: "Aurora Blizzard",
+    subtitle: "Created a logo for a team for a sports event.",
+    image: "/assets/publications/jersey-design.webp",
+    type: "image",
+    isBanner: true,
   },
   {
     title: "Aurora Blizzard",
