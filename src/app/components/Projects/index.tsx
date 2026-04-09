@@ -27,15 +27,31 @@ function Projects() {
     const queryView = params.get("view");
 
     if (queryView === "creative" || queryView === "dev") {
-      setView(queryView);
-      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      setView(queryView as ViewType);
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    
     }
   }, []);
 
   useEffect(() => {
     const url = new URL(window.location.href);
-    url.searchParams.set("view", view);
-    window.history.replaceState({}, "", url.toString());
+
+    if (view === "dev") {
+      // If we are on the default view, remove the query param entirely
+      url.searchParams.delete("view");
+    } else {
+      // Only add it if we are on 'creative'
+      url.searchParams.set("view", view);
+    }
+
+    // Clean up the string so it doesn't leave a trailing '?'
+    const newUrl = url.searchParams.toString()
+      ? url.toString()
+      : window.location.pathname;
+
+    window.history.replaceState({}, "", newUrl);
   }, [view]);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -55,7 +71,11 @@ function Projects() {
   };
 
   return (
-    <section id="projects" ref={sectionRef} className="bg-[rgb(11,11,15)] py-20 px-5 min-h-screen">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="bg-[rgb(11,11,15)] py-20 px-5 min-h-screen"
+    >
       <div className="max-w-7xl mx-auto">
         <ProjectHeader
           view={view}
@@ -83,7 +103,11 @@ function Projects() {
             ))}
           </motion.div>
         ) : (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="w-full"
+          >
             <CreativeView
               subFilter={subFilter}
               isTouchDevice={isTouchDevice}
@@ -93,7 +117,12 @@ function Projects() {
         )}
       </div>
 
-      <CarouselModal images={modalImages} open={modalOpen} startIndex={modalStartIndex} onClose={closeCarousel} />
+      <CarouselModal
+        images={modalImages}
+        open={modalOpen}
+        startIndex={modalStartIndex}
+        onClose={closeCarousel}
+      />
     </section>
   );
 }
