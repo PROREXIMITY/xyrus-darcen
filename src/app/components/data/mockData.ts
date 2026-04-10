@@ -23,7 +23,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Creciendo Website",
-    image: "/assets/Creciendo.jpg",
+    image: "/assets/Creciendo.webp",
     description:
       "Frontend Developer for this modern business website with elegant design and smooth animations. Focused on creating seamless user experiences and optimized performance.",
     tech: [
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     title: "POS Nanay Flora's Pasalubong",
-    image: "/assets/POS.jpg",
+    image: "/assets/POS.webp",
     description:
       "A freelance project developed for Nanay Floras, a local pasalubong store, to replace manual inventory and sales tracking which previously caused stock loss, slow operations, and inconsistencies.",
     tech: [
@@ -66,11 +66,11 @@ export const projects: Project[] = [
     category: "Frontend",
     liveLink: "https://github.com/PROREXIMITY",
     githubLink: undefined,
-    screenshots: ["/assets/POS.jpg", "/assets/POS.jpg"],
+    screenshots: ["/assets/POS.webp", "/assets/POS.webp"],
   },
   {
     title: "E-Commerce Web Application",
-    image: "/assets/AdvWeb.png",
+    image: "/assets/AdvWeb.webp",
     description:
       "Developed an e-commerce web application using React and Firebase. Built core features like product addition, display, cart functionality, and user authentication, with a clean and partially responsive interface.",
     tech: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   },
   {
     title: "LX Events Pro",
-    image: "/assets/lxlogo.png",
+    image: "/assets/lxlogo.webp",
     description:
       "Developed a responsive event management platform for sound system services with image galleries, real-time booking, payment integration, contact form, and an admin dashboard for easy content management.",
     tech: ["HTML", "CSS", "PHP", "PHPMailer", "MySQL"],
@@ -244,7 +244,7 @@ export const creativeWorks: CreativeWork[] = [
     title: "Center for Perfoming Arts Wrap Up Video",
     subtitle: "Adobe After Effects | Adobe Photoshop  | Adobe Premiere Pro",
     image: "/assets/videos/cpa.webp",
-    videoUrl: "/assets/videos/cpa.webm",
+    videoUrl: "/assets/videos/tscpa.webm",
     type: "video",
     isBanner: false,
   },
@@ -407,7 +407,7 @@ export const experiences: Experience[] = [
     institution: "Bachelor of Science in Information Technology",
     period: "2021 - 2025",
     description: "Specialized in Mobile and Web Applications",
-    image: "/assets/main-bg.png",
+    image: "/assets/main-bg.webp",
     achievements: ["Dean's Lister", "Top 3 Best Capstone Project"],
   },
   {
@@ -417,7 +417,7 @@ export const experiences: Experience[] = [
     period: "2024 - 2025",
     description:
       "Led the creative team in designing promotional materials for tech events and workshops",
-    image: "/assets/AWS.jpg",
+    image: "/assets/AWS.webp",
     achievements: [
       "Successfully led the design of promotional materials",
       "Led the creative team",
@@ -430,7 +430,7 @@ export const experiences: Experience[] = [
     period: "2024 - 2025",
     description:
       "Managed the public image and oversaw the design and promotion of various artistic and cultural events and activities.",
-    image: "/assets/TSCPA.jpg",
+    image: "/assets/publication/Cover Photo.webp",
     achievements: [
       "Multi Awarded Organization",
       "Designed the official logo and brand guidelines, establishing a distinctive visual identity for the organization.",
@@ -445,7 +445,7 @@ export const experiences: Experience[] = [
     period: "2023 - 2024",
     description:
       "Led a team of creatives in planning, designing, and publishing high-quality publicity materials and social media content to promote student council events and initiatives",
-    image: "/assets/SEAT.jpg",
+    image: "/assets/SEAT.webp",
     achievements: [
       "Successfully organized events for the School of Engineering, Architecture, and Technology",
       "Designed the official Student Council logo, establishing a cohesive and modern visual identity across all platforms and significantly boosting brand recognition.",
@@ -458,7 +458,7 @@ export const experiences: Experience[] = [
     period: "2022 - 2023",
     description:
       "Specialized in creating engaging video and graphic promotional content to drive attendance for key tech events and workshops.",
-    image: "/assets/Xyrus.png",
+    image: "/assets/Xyrus.webp",
     achievements: [
       "Ensured all visual content was high-quality and on-brand, directly supporting the organization's goals.",
     ],
@@ -471,7 +471,7 @@ export const experiences: Experience[] = [
     period: "December 2024 - June 2025",
     description:
       "Working on full-stack development projects using modern web technologies.",
-    image: "/assets/internship.JPEG",
+    image: "/assets/internship.webp",
     achievements: [
       "Developed and maintained responsive web applications",
       "Collaborated with developers on production projects",
