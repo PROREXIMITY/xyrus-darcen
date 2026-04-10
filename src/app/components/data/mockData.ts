@@ -430,7 +430,7 @@ export const experiences: Experience[] = [
     period: "2024 - 2025",
     description:
       "Managed the public image and oversaw the design and promotion of various artistic and cultural events and activities.",
-    image: "/assets/publication/Cover Photo.webp",
+    image: "/assets/publications/Cover Photo.webp",
     achievements: [
       "Multi Awarded Organization",
       "Designed the official logo and brand guidelines, establishing a distinctive visual identity for the organization.",
